@@ -1,14 +1,14 @@
 import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import { PLANETS, SIZES } from "./helpers/constants";
+import { PLANETS } from "./helpers/constants";
 import { Planet, PlanetName } from "./types/types";
 import { setupGui } from "./setupGui";
 import { createPlanet } from "./helpers/functions";
 
 const scene = new THREE.Scene();
 
-scene.add(new THREE.GridHelper());
+// scene.add(new THREE.GridHelper());
 
 const camera = new THREE.PerspectiveCamera(
   75,
