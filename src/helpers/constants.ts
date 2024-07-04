@@ -1,4 +1,4 @@
-const multiplier = 3; // 1 AU (for viewing purposes)
+const multiplier = 3.5; // 1 AU (for viewing purposes)
 
 const EARTH_RADIUS = 0.15; // 1
 const SUN_RADIUS = EARTH_RADIUS * 10; // 109 For viewing purposes, we will imagine that the sun is 10 times smaller than in reality
@@ -18,22 +18,22 @@ const POSITIONS = {
   },
 
   mercury: {
-    x: 0.39 * multiplier,
+    x: 0.39 * multiplier + 1, // move further from sun
     y: 2,
-    z: 0,
+    z: 1,
   },
   venus: {
-    x: 0.72 * multiplier,
+    x: 0.72 * multiplier + 1, // move further from sun
     y: 0,
     z: 1.5,
   },
   earth: {
-    x: 1 * multiplier,
+    x: 1 * multiplier + 1, // move further from sun
     y: 0,
     z: 0,
   },
   mars: {
-    x: 1.52 * multiplier,
+    x: 1.52 * multiplier + 1, // move further from sun
     y: 0,
     z: 2,
   },
