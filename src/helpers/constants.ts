@@ -59,6 +59,18 @@ const POSITIONS = {
   },
 };
 
+const SPEED = {
+  earth: 1,
+  sun: 1,
+  mercury: 0.24,
+  venus: 0.62,
+  mars: 1.88,
+  jupiter: 11.86,
+  saturn: 29.46,
+  uranus: 84.01,
+  neptune: 164.79,
+};
+
 const SIZES = {
   earth: EARTH_RADIUS, // 1
   sun: SUN_RADIUS, // 109,
@@ -76,46 +88,55 @@ const PLANETS = {
     size: SIZES.earth,
     coords: POSITIONS.earth,
     color: 0x33afff,
+    speed: SPEED.earth,
   },
   sun: {
     size: SIZES.sun,
     coords: POSITIONS.sun,
     color: 0xffff33,
+    speed: SPEED.sun,
   },
   mars: {
     size: SIZES.mars,
     coords: POSITIONS.mars,
     color: 0xff6633,
+    speed: SPEED.mars,
   },
   mercury: {
     size: SIZES.mercury,
     coords: POSITIONS.mercury,
     color: 0x666699,
+    speed: SPEED.mercury,
   },
   venus: {
     size: SIZES.venus,
     coords: POSITIONS.venus,
     color: 0xff99ff,
+    speed: SPEED.venus,
   },
   jupiter: {
     size: SIZES.jupiter,
     coords: POSITIONS.jupiter,
     color: 0x993333,
+    speed: SPEED.jupiter,
   },
   saturn: {
     size: SIZES.saturn,
     coords: POSITIONS.saturn,
     color: 0x996633,
+    speed: SPEED.saturn,
   },
   uranus: {
     size: SIZES.uranus,
     coords: POSITIONS.uranus,
     color: 0x003399,
+    speed: SPEED.uranus,
   },
   neptune: {
     size: SIZES.neptune,
     coords: POSITIONS.neptune,
     color: 0x339966,
+    speed: SPEED.neptune,
   },
 };
 

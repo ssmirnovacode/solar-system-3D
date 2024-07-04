@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { SIZES } from "./constants";
+import { PLANETS, SIZES } from "./constants";
 import { PlanetName } from "../types/types";
 
 export function getGeometry(radius: number): THREE.SphereGeometry {
@@ -14,5 +14,9 @@ export function createPlanet(planetName: PlanetName, color: number) {
   const planet = new THREE.Mesh(getGeometry(SIZES[planetName]), material);
   planet.castShadow = !isSun;
   planet.receiveShadow = !isSun;
+
+  // @ts-ignore
+  planet.speed = PLANETS[planetName].speed;
+
   return planet;
 }
