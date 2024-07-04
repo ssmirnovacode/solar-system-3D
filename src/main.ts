@@ -20,6 +20,7 @@ camera.position.set(5, 5, 5);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.shadowMap.enabled = true;
 document.body.appendChild(renderer.domElement);
 
 window.addEventListener("resize", () => {
@@ -32,6 +33,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 controls.update();
 
 const pointLight = new THREE.PointLight(0xffffff, 25.7, 0, 1.31);
+pointLight.castShadow = true;
 
 setupGui(scene, pointLight, camera);
 

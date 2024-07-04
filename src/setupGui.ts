@@ -7,7 +7,9 @@ export function setupGui(scene: Scene, pointLight: PointLight, camera: Camera) {
   const gui = new GUI();
 
   const cameraFolder = gui.addFolder("Camera");
-  cameraFolder.add(camera.position, "z", 0, 20);
+  cameraFolder.add(camera.position, "x", -10, 10);
+  cameraFolder.add(camera.position, "y", -10, 10);
+  cameraFolder.add(camera.position, "z", -10, 10);
   cameraFolder.open();
 
   pointLight.position.set(POSITIONS.sun.x, POSITIONS.sun.y, POSITIONS.sun.z);

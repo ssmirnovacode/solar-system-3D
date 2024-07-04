@@ -7,9 +7,12 @@ export function getGeometry(radius: number): THREE.SphereGeometry {
 }
 
 export function createPlanet(planetName: PlanetName, color: number) {
-  const material =
-    planetName === "sun"
-      ? new THREE.MeshBasicMaterial({ color })
-      : new THREE.MeshStandardMaterial({ color });
-  return new THREE.Mesh(getGeometry(SIZES[planetName]), material);
+  const isSun = planetName === "sun";
+  const material = isSun
+    ? new THREE.MeshBasicMaterial({ color })
+    : new THREE.MeshStandardMaterial({ color });
+  const planet = new THREE.Mesh(getGeometry(SIZES[planetName]), material);
+  planet.castShadow = !isSun;
+  planet.receiveShadow = !isSun;
+  return planet;
 }

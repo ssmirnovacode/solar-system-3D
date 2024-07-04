@@ -1,14 +1,14 @@
-const multiplier = 10; // 1 AU (for viewing purposes)
+const multiplier = 3; // 1 AU (for viewing purposes)
 
 const EARTH_RADIUS = 0.15; // 1
-const SUN_RADIUS = EARTH_RADIUS * 10; // 109 // For viewing purposes, we will imagine that the sun is 10 times smaller than in reality
-const MERCURY_RADIUS = EARTH_RADIUS * 0.38; // .38
-const MARS_RADIUS = EARTH_RADIUS * 0.53; // 0.53
-const VENUS_RADIUS = EARTH_RADIUS * 0.95; // 0.95
-const JUPITER_RADIUS = EARTH_RADIUS * 11.21; // 11.21
-const SATURN_RADIUS = EARTH_RADIUS * 9.45; // 9.45
-const URANUS_RADIUS = EARTH_RADIUS * 4.01; // 4.01
-const NEPTUNE_RADIUS = EARTH_RADIUS * 3.88; // 3.88
+const SUN_RADIUS = EARTH_RADIUS * 10; // 109 For viewing purposes, we will imagine that the sun is 10 times smaller than in reality
+const MERCURY_RADIUS = EARTH_RADIUS * 0.38;
+const MARS_RADIUS = EARTH_RADIUS * 0.53;
+const VENUS_RADIUS = EARTH_RADIUS * 0.95;
+const JUPITER_RADIUS = EARTH_RADIUS * 11.21;
+const SATURN_RADIUS = EARTH_RADIUS * 9.45;
+const URANUS_RADIUS = EARTH_RADIUS * 4.01;
+const NEPTUNE_RADIUS = EARTH_RADIUS * 3.88;
 
 const POSITIONS = {
   sun: {
@@ -19,13 +19,13 @@ const POSITIONS = {
 
   mercury: {
     x: 0.39 * multiplier,
-    y: 0,
+    y: 2,
     z: 0,
   },
   venus: {
     x: 0.72 * multiplier,
     y: 0,
-    z: 0,
+    z: 1.5,
   },
   earth: {
     x: 1 * multiplier,
@@ -35,32 +35,31 @@ const POSITIONS = {
   mars: {
     x: 1.52 * multiplier,
     y: 0,
-    z: 0,
+    z: 2,
   },
   jupiter: {
     x: 5.2 * multiplier,
     y: 0,
-    z: 0,
+    z: 3,
   },
   saturn: {
     x: 9.58 * multiplier,
     y: 0,
-    z: 0,
+    z: -1,
   },
   uranus: {
     x: 19.58 * multiplier,
-    y: 0,
-    z: 0,
+    y: 5,
+    z: -7,
   },
   neptune: {
     x: 30.07 * multiplier,
-    y: 0,
-    z: 0,
+    y: 2,
+    z: -9,
   },
 };
 
 const SIZES = {
-  // TODO add formula depending on sun size
   earth: EARTH_RADIUS, // 1
   sun: SUN_RADIUS, // 109,
   mercury: MERCURY_RADIUS, // .38
