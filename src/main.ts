@@ -3,7 +3,8 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import Stats from "three/addons/libs/stats.module.js";
 import { GUI } from "three/addons/libs/lil-gui.module.min.js";
-import { POSITIONS, SIZES } from "./helpers/constants";
+import { PLANETS, POSITIONS, SIZES } from "./helpers/constants";
+import { PlanetName } from "./types/types";
 
 const scene = new THREE.Scene();
 
@@ -15,7 +16,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   100
 );
-camera.position.set(-1, 4, 2.5);
+camera.position.set(5, 5, 5);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -34,31 +35,41 @@ function getGeometry(radius: number): THREE.SphereGeometry {
   return new THREE.SphereGeometry(radius);
 }
 
-const sun = new THREE.Mesh(
-  getGeometry(SIZES.sun),
-  new THREE.MeshBasicMaterial({ color: 0xffff33 })
-);
+function createPlanet(planetName: PlanetName, color: number) {
+  return new THREE.Mesh(
+    getGeometry(SIZES[planetName]),
+    new THREE.MeshBasicMaterial({ color })
+  );
+}
 
-sun.position.set(POSITIONS.sun.x, POSITIONS.sun.y, POSITIONS.sun.z);
+const planets = Object.entries(PLANETS).map(([key, value]) => {
+  const planet = createPlanet(key as PlanetName, value.color);
+  planet.position.set(value.coords.x, value.coords.y, value.coords.z);
+  return planet;
+});
 
-scene.add(sun);
+scene.add(...planets);
 
-const earth = new THREE.Mesh(
-  getGeometry(SIZES.earth),
-  new THREE.MeshBasicMaterial({ color: 0x33afff })
-);
+// const sun = createPlanet("sun", 0xffff33);
+// // new THREE.Mesh(
+// //   getGeometry(SIZES.sun),
+// //   new THREE.MeshBasicMaterial({ color: 0xffff33 })
+// // );
 
-earth.position.set(POSITIONS.earth.x, POSITIONS.earth.y, POSITIONS.earth.z);
+// sun.position.set(POSITIONS.sun.x, POSITIONS.sun.y, POSITIONS.sun.z);
 
-scene.add(earth);
+// scene.add(sun);
+
+// const earth = new THREE.Mesh(
+//   getGeometry(SIZES.earth),
+//   new THREE.MeshBasicMaterial({ color: 0x33afff })
+// );
+
+// earth.position.set(POSITIONS.earth.x, POSITIONS.earth.y, POSITIONS.earth.z);
+
+// scene.add(earth);
 
 const gui = new GUI();
-
-const earthFolder = gui.addFolder("earth");
-earthFolder.add(earth.rotation, "x", 0, Math.PI * 2);
-earthFolder.add(earth.rotation, "y", 0, Math.PI * 2);
-earthFolder.add(earth.rotation, "z", 0, Math.PI * 2);
-earthFolder.open();
 
 const cameraFolder = gui.addFolder("Camera");
 cameraFolder.add(camera.position, "z", 0, 20);
