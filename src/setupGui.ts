@@ -1,6 +1,5 @@
 import { Camera, PointLight, Scene } from "three";
 import GUI from "three/examples/jsm/libs/lil-gui.module.min.js";
-import { POSITIONS } from "./helpers/constants";
 import * as THREE from "three";
 
 export function setupGui(scene: Scene, pointLight: PointLight, camera: Camera) {
@@ -10,7 +9,8 @@ export function setupGui(scene: Scene, pointLight: PointLight, camera: Camera) {
   cameraFolder.add(camera.position, "x", -10, 10);
   cameraFolder.add(camera.position, "y", -10, 10);
   cameraFolder.add(camera.position, "z", -10, 10);
-  cameraFolder.open();
+
+  cameraFolder.close();
 
   const data = { color: 0x00ff00, lightColor: 0xffffff };
 
@@ -24,6 +24,8 @@ export function setupGui(scene: Scene, pointLight: PointLight, camera: Camera) {
     pointLight.color.set(data.lightColor);
   });
   pointLightFolder.add(pointLight, "intensity", 0, Math.PI * 10);
+
+  pointLightFolder.close();
 
   const pointLightFolderControls = pointLightFolder.addFolder("Controls");
   pointLightFolderControls.add(pointLight.position, "x", -10, 10);
@@ -39,4 +41,6 @@ export function setupGui(scene: Scene, pointLight: PointLight, camera: Camera) {
     .add(pointLightHelper, "visible")
     .name("Helper Visible");
   pointLightFolderControls.close();
+
+  // gui.hide();
 }
