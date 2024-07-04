@@ -12,10 +12,6 @@ export function setupGui(scene: Scene, pointLight: PointLight, camera: Camera) {
   cameraFolder.add(camera.position, "z", -10, 10);
   cameraFolder.open();
 
-  pointLight.position.set(POSITIONS.sun.x, POSITIONS.sun.y, POSITIONS.sun.z);
-  pointLight.visible = true;
-  scene.add(pointLight);
-
   const data = { color: 0x00ff00, lightColor: 0xffffff };
 
   const pointLightHelper = new THREE.PointLightHelper(pointLight);

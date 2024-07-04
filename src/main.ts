@@ -1,7 +1,7 @@
 import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import { PLANETS } from "./helpers/constants";
+import { PLANETS, POSITIONS } from "./helpers/constants";
 import { Planet, PlanetName } from "./types/types";
 import { setupGui } from "./setupGui";
 import { createPlanet } from "./helpers/functions";
@@ -35,6 +35,10 @@ controls.update();
 const pointLight = new THREE.PointLight(0xffffff, 25.7, 0, 1.31);
 pointLight.castShadow = true;
 
+pointLight.position.set(POSITIONS.sun.x, POSITIONS.sun.y, POSITIONS.sun.z);
+pointLight.visible = true;
+scene.add(pointLight);
+
 setupGui(scene, pointLight, camera);
 
 const planets: Planet[] = Object.entries(PLANETS).map(([key, value]) => {
@@ -42,10 +46,9 @@ const planets: Planet[] = Object.entries(PLANETS).map(([key, value]) => {
   planet.position.set(value.coords.x, value.coords.y, value.coords.z);
   return planet;
 });
-console.log(planets[3]);
+
 scene.add(...planets);
-// let radius = 2;
-// let angle = 0;
+
 let speed = 0.01;
 
 const balls = planets.map((planet) => buildAnimationObject(planet));
