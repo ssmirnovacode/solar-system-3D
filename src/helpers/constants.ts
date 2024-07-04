@@ -1,6 +1,6 @@
 // positions
 
-const SUN_SIZE = 2; // 109
+const SUN_SIZE = 2; // 109 (lets imagine sun is only 10x bigger than Earth)
 const EARTH_SIZE = 0.2; // 1
 const MERCURY_SIZE = 0.08; // .38
 const MARS_SIZE = 0.13; // 0.53
