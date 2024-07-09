@@ -1,14 +1,24 @@
-const multiplier = 3.5; // 1 AU (for viewing purposes)
+// const multiplier = 3.5; // 1 AU (for viewing purposes)
 
-const EARTH_RADIUS = 0.15; // 1
-const SUN_RADIUS = EARTH_RADIUS * 10; // 109 For viewing purposes, we will imagine that the sun is 10 times smaller than in reality
+// const EARTH_RADIUS = 0.15; // 1
+// const SUN_RADIUS = EARTH_RADIUS * 1; // 109 For viewing purposes, we will imagine that the sun is 10 times smaller than in reality
+// const MERCURY_RADIUS = EARTH_RADIUS * 0.38;
+// const MARS_RADIUS = EARTH_RADIUS * 0.53;
+// const VENUS_RADIUS = EARTH_RADIUS * 0.95;
+// const JUPITER_RADIUS = EARTH_RADIUS * 11.21;
+// const SATURN_RADIUS = EARTH_RADIUS * 9.45;
+// const URANUS_RADIUS = EARTH_RADIUS * 4.01;
+// const NEPTUNE_RADIUS = EARTH_RADIUS * 3.88;
+
+const EARTH_RADIUS = 1;
+const SUN_RADIUS = EARTH_RADIUS * 7; // 109 For viewing purposes, we will imagine that the sun is 10 times smaller than in reality
 const MERCURY_RADIUS = EARTH_RADIUS * 0.38;
 const MARS_RADIUS = EARTH_RADIUS * 0.53;
 const VENUS_RADIUS = EARTH_RADIUS * 0.95;
-const JUPITER_RADIUS = EARTH_RADIUS * 11.21;
-const SATURN_RADIUS = EARTH_RADIUS * 9.45;
-const URANUS_RADIUS = EARTH_RADIUS * 4.01;
-const NEPTUNE_RADIUS = EARTH_RADIUS * 3.88;
+const JUPITER_RADIUS = EARTH_RADIUS * 2;
+const SATURN_RADIUS = EARTH_RADIUS * 1.7;
+const URANUS_RADIUS = EARTH_RADIUS * 1.4;
+const NEPTUNE_RADIUS = EARTH_RADIUS * 1.3;
 
 const POSITIONS = {
   sun: {
@@ -18,42 +28,42 @@ const POSITIONS = {
   },
 
   mercury: {
-    x: 0.39 * multiplier + 1, // move further from sun
+    x: 4, // 0.39 * multiplier + 1, // move further from sun
     y: 2,
     z: 1,
   },
   venus: {
-    x: 0.72 * multiplier + 1, // move further from sun
+    x: 7, // 0.72 * multiplier + 1, // move further from sun
     y: 0,
     z: 1.5,
   },
   earth: {
-    x: 1 * multiplier + 1, // move further from sun
+    x: 10, // 1 * multiplier + 1, // move further from sun
     y: 0,
     z: 0,
   },
   mars: {
-    x: 1.52 * multiplier + 1, // move further from sun
+    x: 15, // 1.52 * multiplier + 1, // move further from sun
     y: 0,
     z: 2,
   },
   jupiter: {
-    x: 5.2 * multiplier,
+    x: 30, // 5.2 * multiplier,
     y: 0,
     z: 3,
   },
   saturn: {
-    x: 9.58 * multiplier,
+    x: 50, // 9.58 * multiplier,
     y: 0,
     z: -1,
   },
   uranus: {
-    x: 19.58 * multiplier,
+    x: 70, // 19.58 * multiplier,
     y: 5,
     z: -7,
   },
   neptune: {
-    x: 30.07 * multiplier,
+    x: 90, // 30.07 * multiplier,
     y: 2,
     z: -9,
   },

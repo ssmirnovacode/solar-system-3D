@@ -42,5 +42,24 @@ export function setupGui(scene: Scene, pointLight: PointLight, camera: Camera) {
     .name("Helper Visible");
   pointLightFolderControls.close();
 
+  // const flareFolder = gui.addFolder("Lens Flare");
+
+  // const flareParams = {
+  //   color: pointLight.color.getHex(),
+  //   intensity: pointLight.intensity,
+  //   distance: pointLight.distance,
+  // };
+
+  // flareFolder.addColor(flareParams, "color").onChange((value) => {
+  //   pointLight.color.setHex(value);
+  // });
+  // flareFolder.add(flareParams, "intensity", 0, 2).onChange((value) => {
+  //   pointLight.intensity = value;
+  // });
+  // flareFolder.add(flareParams, "distance", 0, 5000).onChange((value) => {
+  //   pointLight.distance = value;
+  // });
+  // flareFolder.open();
+
   // gui.hide();
 }

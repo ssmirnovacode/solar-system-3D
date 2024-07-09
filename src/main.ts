@@ -5,6 +5,7 @@ import { PLANETS, POSITIONS } from "./helpers/constants";
 import { Planet, PlanetName } from "./types/types";
 import { setupGui } from "./setupGui";
 import { createPlanet } from "./helpers/functions";
+import { Lensflare, LensflareElement } from "three/addons/objects/Lensflare.js";
 
 const scene = new THREE.Scene();
 
@@ -32,12 +33,21 @@ window.addEventListener("resize", () => {
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.update();
 
-const pointLight = new THREE.PointLight(0xffffff, 25.7, 0, 1.31);
+const pointLight = new THREE.PointLight(0xffffff, 25.7, 0, 0.6);
 pointLight.castShadow = true;
 
 pointLight.position.set(POSITIONS.sun.x, POSITIONS.sun.y, POSITIONS.sun.z);
 pointLight.visible = true;
 scene.add(pointLight);
+
+const textureLoader = new THREE.TextureLoader();
+const textureFlare0 = textureLoader.load(
+  "https://cdn.jsdelivr.net/gh/Sean-Bradley/First-Car-Shooter@main/dist/client/img/lensflare0.png"
+);
+
+const lensflare = new Lensflare();
+lensflare.addElement(new LensflareElement(textureFlare0, 100, 15));
+//pointLight.add(lensflare);
 
 setupGui(scene, pointLight, camera);
 
