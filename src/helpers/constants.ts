@@ -28,22 +28,22 @@ const POSITIONS = {
   },
 
   mercury: {
-    x: 4, // 0.39 * multiplier + 1, // move further from sun
+    x: SUN_RADIUS / 3 + 4, // 0.39 * multiplier + 1, // move further from sun
     y: 2,
     z: 1,
   },
   venus: {
-    x: 7, // 0.72 * multiplier + 1, // move further from sun
+    x: SUN_RADIUS / 3 + 7, // 0.72 * multiplier + 1, // move further from sun
     y: 0,
     z: 1.5,
   },
   earth: {
-    x: 10, // 1 * multiplier + 1, // move further from sun
+    x: SUN_RADIUS / 3 + 10, // 1 * multiplier + 1, // move further from sun
     y: 0,
     z: 0,
   },
   mars: {
-    x: 15, // 1.52 * multiplier + 1, // move further from sun
+    x: SUN_RADIUS / 3 + 15, // 1.52 * multiplier + 1, // move further from sun
     y: 0,
     z: 2,
   },
